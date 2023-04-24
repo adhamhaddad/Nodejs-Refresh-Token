@@ -4,21 +4,15 @@
 
 Full Authentication & Authorization using nodejs, bcrypt, jsonwebtoken, and pg that integrates accessToken, and refresh token in an advanced way
 
-#
-
 ## Dependencies
 
 - Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
 
 - npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
 
-#
-
 ## Code Styles
 
 This project uses `eslint` and `prettier`. all configurations for this project inside `package.json` file.
-
-#
 
 ## Installation
 
@@ -39,8 +33,6 @@ This project uses `eslint` and `prettier`. all configurations for this project i
 ## Unit Tests
 
 Unit test available using Jasmine with this command: `npm run test`
-
-Available Scripts:
 
 ## Available Scripts
 
