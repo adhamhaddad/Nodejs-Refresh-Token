@@ -18,10 +18,6 @@ My starter kit includes the following features and benefits:
 
 I hope that my starter kit can help simplify the process of building Node.js applications with authentication and token management features, and provide a solid foundation for your application development. Please feel free to use and customize the code, and share your feedback and contributions to the repository.
 
-## Short Description
-
-Full Authentication & Authorization using nodejs, bcrypt, jsonwebtoken, and pg that integrates accessToken, and refresh token in an advanced way
-
 ## Dependencies
 
 - Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
