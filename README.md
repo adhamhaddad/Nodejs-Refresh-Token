@@ -2,6 +2,24 @@
 
 ## Description
 
+Welcome to my Nodejs-Refresh-Token starter kit for building applications with user authentication and token management features. My starter kit includes a set of pre-built code that you can use as a starting point for building your own application. It includes user authentication functionality, a database for storing user data, and refresh token management features to improve the security of your application.
+
+With my starter kit, you can quickly and easily build secure and scalable Node.js applications with minimal setup and configuration. You can customize the code to fit your specific use case and security requirements, and add new features and functionalities as needed.
+
+My starter kit includes the following features and benefits:
+
+    User authentication: My starter kit includes pre-built code for user authentication, including login, registration, and password reset functionality.
+
+    Database integration: My starter kit includes a database for storing user data, with support for popular databases such as MySQL, PostgreSQL.
+
+    Refresh token management: My starter kit includes refresh token management features, with support for rotating refresh tokens to improve the security of your authentication system.
+
+    Customizable configuration: My starter kit includes a range of customizable configuration options, such as token expiration times, token secret keys, and database settings. This allows you to tailor the code to your specific use case and security requirements.
+
+I hope that my starter kit can help simplify the process of building Node.js applications with authentication and token management features, and provide a solid foundation for your application development. Please feel free to use and customize the code, and share your feedback and contributions to the repository.
+
+## Short Description
+
 Full Authentication & Authorization using nodejs, bcrypt, jsonwebtoken, and pg that integrates accessToken, and refresh token in an advanced way
 
 ## Dependencies
