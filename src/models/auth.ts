@@ -3,11 +3,11 @@ import { PoolClient } from 'pg';
 import { compare, hash as hashPass } from '../utils/password';
 import { UserType } from './user';
 
-type AuthType = {
+export type AuthType = {
   email: string;
   password: string;
 };
-type PasswordType = {
+export type PasswordType = {
   old_password: string;
   new_password: string;
 };
@@ -58,10 +58,7 @@ class Auth {
       return result.rows[0];
     });
   }
-  async updatePassword(
-    id: string,
-    p: AuthType & PasswordType
-  ): Promise<UserType> {
+  async updatePassword(id: string, p: PasswordType): Promise<UserType> {
     return this.withConnection(async (connection: PoolClient) => {
       const query = {
         text: 'SELECT password FROM users WHERE id=$1',
