@@ -16,14 +16,14 @@ CREATE DATABASE authentication_test;
 -- -------------------------
 -- Role admin
 -- -------------------------
--- DROP ROLE IF EXISTS admin;
+DROP ROLE IF EXISTS admin;
 --
 --
--- CREATE ROLE admin WITH PASSWORD 'admin';
+CREATE ROLE admin WITH PASSWORD 'admin';
 -- -------------------------
 -- Alter Role admin
 -- -------------------------
--- ALTER ROLE admin WITH SUPERUSER CREATEROLE CREATEDB LOGIN;
+ALTER ROLE admin WITH SUPERUSER CREATEROLE CREATEDB LOGIN;
 -- -------------------------
 -- Database GRANT PRIVILEGES
 -- -------------------------
