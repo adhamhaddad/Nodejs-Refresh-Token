@@ -16,7 +16,6 @@ const privateRefreshKey = path.join(
 );
 
 export const setRefreshToken = async (payload: Payload): Promise<string> => {
-  await redisClient.connect();
   try {
     const privateKey = await fs.promises.readFile(privateRefreshKey, 'utf8');
     const options: SignOptions = {
@@ -33,7 +32,5 @@ export const setRefreshToken = async (payload: Payload): Promise<string> => {
     return token;
   } catch (err) {
     throw new Error('Failed to sign JWT');
-  } finally {
-    await redisClient.disconnect();
   }
 };

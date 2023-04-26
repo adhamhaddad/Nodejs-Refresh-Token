@@ -16,7 +16,6 @@ const privateAccessKey = path.join(
 );
 
 export const setAccessToken = async (payload: Payload): Promise<string> => {
-  await redisClient.connect();
   try {
     const privateKey = await fs.promises.readFile(privateAccessKey, 'utf8');
     const options: SignOptions = {
@@ -33,7 +32,5 @@ export const setAccessToken = async (payload: Payload): Promise<string> => {
     return token;
   } catch (err) {
     throw new Error('Failed to sign JWT');
-  } finally {
-    await redisClient.disconnect();
   }
 };

@@ -25,7 +25,6 @@ export const verifyAccessToken = async (
   res: Response,
   next: NextFunction
 ) => {
-  await redisClient.connect();
   try {
     const authorization = req.headers.authorization as string;
     if (!authorization) {
@@ -50,10 +49,8 @@ export const verifyAccessToken = async (
         throw new Error('Access token not found or expired');
       }
       req.user = { id: decoded.id };
-      await redisClient.disconnect();
       return next();
     } catch (err) {
-      await redisClient.disconnect();
       if ((err as Error).name !== 'TokenExpiredError') {
         throw new Error('Invalid access token');
       }

@@ -15,7 +15,6 @@ const publicRefreshKey = path.join(
 );
 
 export const verifyRefreshToken = async (token: string): Promise<Payload> => {
-  await redisClient.connect();
   try {
     const publicKey = await fs.promises.readFile(publicRefreshKey, 'utf8');
     const decoded = jwt.verify(token, publicKey, {
@@ -29,7 +28,5 @@ export const verifyRefreshToken = async (token: string): Promise<Payload> => {
     return decoded;
   } catch (err) {
     throw new Error(`Failed to verify JWT: ${(err as Error).message}`);
-  } finally {
-    await redisClient.disconnect();
   }
 };
