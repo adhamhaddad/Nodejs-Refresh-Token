@@ -32,7 +32,6 @@ export const setAccessToken = async (payload: Payload): Promise<string> => {
     });
     return token;
   } catch (err) {
-    console.log((err as Error).message);
     throw new Error('Failed to sign JWT');
   } finally {
     await redisClient.disconnect();
