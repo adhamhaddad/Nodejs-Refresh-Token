@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import os from 'os';
 import configs from './configs';
@@ -34,6 +35,7 @@ const corsOptions = {
 // Middlewares
 app.use(helmet());
 app.use(cors(corsOptions));
+app.use(cookieParser());
 app.use(morgan('common'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

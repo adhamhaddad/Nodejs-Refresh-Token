@@ -1,5 +1,5 @@
-import database from '../database';
 import { PoolClient } from 'pg';
+import { pgClient } from '../database';
 import { compare, hash as hashPass } from '../utils/password';
 import { UserType } from './user';
 
@@ -16,7 +16,7 @@ class Auth {
   async withConnection<T>(
     callback: (connection: PoolClient) => Promise<T>
   ): Promise<T> {
-    const connection = await database.connect();
+    const connection = await pgClient.connect();
     try {
       return await callback(connection);
     } catch (error) {

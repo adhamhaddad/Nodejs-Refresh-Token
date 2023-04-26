@@ -18,6 +18,12 @@ My starter kit includes the following features and benefits:
 
 I hope that my starter kit can help simplify the process of building Node.js applications with authentication and token management features, and provide a solid foundation for your application development. Please feel free to use and customize the code, and share your feedback and contributions to the repository.
 
+# High Level Architecture
+
+Figure 1 represents the authentication architecture of this sample implementation. The architecture is comprised of two logical components; application user, and application services.
+
+<p align="center"><img src="documents/authenticate.png" alt="Architecture Overview"/>Figure 1: High Level Architecture</p>
+
 ## Dependencies
 
 - Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
@@ -78,8 +84,9 @@ Open <http://localhost:3000/> to view it in the browser.
 
 ## Built With
 
-- [Node](https://nodejs.org) - Javascript Runtime
-- [Express](https://expressjs.com/) - Javascript API Framework
-- [PostgreSQL](https://www.postgresql.org/) - Open Source Relational Database
+- [Node](https://nodejs.org) - Javascript runtime
+- [Express](https://expressjs.com/) - Javascript API framework
+- [PostgreSQL](https://www.postgresql.org/) - Open source Relational Database
+- [Redis](https://redis.io/) - Open source in-memory data store.
 - [Jasmine](https://jasmine.github.io/) - Testing library
 - [JWT](https://jwt.io/) - JSON Web Token for generates access and refresh tokens

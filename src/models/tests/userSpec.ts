@@ -1,6 +1,6 @@
-import database from '../../database';
+import { pgClient } from '../../database';
 import User, { UserType } from '../user';
-import Auth, { AuthType, PasswordType } from '../auth';
+import Auth, { PasswordType } from '../auth';
 
 const auth = new Auth();
 const user = new User();
@@ -31,7 +31,7 @@ describe('User Model', () => {
     } as UserType;
 
     beforeAll(async () => {
-      const connection = await database.connect();
+      const connection = await pgClient.connect();
       try {
         const query = {
           text: 'DELETE FROM users;\nALTER SEQUENCE users_id_seq RESTART WITH 1'
@@ -101,7 +101,7 @@ describe('Auth Model', () => {
     } as PasswordType;
 
     afterAll(async () => {
-      const connection = await database.connect();
+      const connection = await pgClient.connect();
       try {
         const query = {
           text: 'DELETE FROM users;\nALTER SEQUENCE users_id_seq RESTART WITH 1'

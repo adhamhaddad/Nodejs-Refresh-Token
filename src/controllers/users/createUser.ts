@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
 import User from '../../models/user';
-import { signAccessToken, signRefreshToken } from '../../utils/token';
+import { setAccessToken, setRefreshToken } from '../../utils/token';
 
 const user = new User();
 
 export const createUser = async (req: Request, res: Response) => {
   try {
     const response = await user.createUser(req.body);
-    const accessToken = await signAccessToken(response);
-    const refreshToken = await signRefreshToken(response);
+    const accessToken = await setAccessToken(response);
+    const refreshToken = await setRefreshToken(response);
     res.status(201).json({
       status: true,
       data: { user: { ...response }, tokens: { accessToken, refreshToken } },

@@ -7,10 +7,9 @@ import {
 import {
   createUser,
   authUser,
-  refreshToken,
+  refreshAccessToken,
   updatePassword
 } from '../../controllers/auth';
-import { checkAccessToken } from '../../utils/token';
 import { verifyToken } from '../../middlewares/verifyToken';
 
 const router = Router();
@@ -19,7 +18,6 @@ router
   .post('/register', validateRegister, createUser)
   .post('/login', validateLogin, authUser)
   .patch('/reset-password', validateUpdatePassword, verifyToken, updatePassword)
-  .post('/refresh-token', refreshToken)
-  .get('/check-token', checkAccessToken);
+  .post('/refresh-token', refreshAccessToken);
 
 export default router;
