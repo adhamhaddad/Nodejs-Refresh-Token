@@ -48,11 +48,20 @@ This project uses `eslint` and `prettier`. all configurations for this project i
 
 4- `GRANT ALL PRIVILEGES ON DATABASE authentication TO admin;`
 
-**[2]** Second to install the node_modules run `npm install` or `yarn`. After installation is done start the api in dev mode with `npm run dev` or `yarn dev`.
+**[2]** Second to install the node_modules run `npm install` or `yarn install`. After installation is done
+migrate up the database table schema with `npm run migrate:up` or `yarn migrate:up`
+or run the `script.sh` in `sql` folder from root directory with `./script.sh`
+after that start the api in dev mode with `npm run dev` or `yarn dev`.
 
 ## Unit Tests
 
 Unit test available using Jasmine with this command: `npm run test`
+
+## Important Note
+
+```
+To use refreshToken in the front end I provided a file called react.js in the documents folder.
+```
 
 ## Available Scripts
 
@@ -81,6 +90,14 @@ It's format TypeScript to JavaScript
 
 Build and runs the app in the clients mode.
 Open <http://localhost:3000/> to view it in the browser.
+
+##### `npm run migrate:up` or `yarn migrate:up`
+
+Migrate up the database tables
+
+##### `npm run migrate:down` or `yarn migrate:down`
+
+Migrate up the database tables
 
 ## Built With
 
