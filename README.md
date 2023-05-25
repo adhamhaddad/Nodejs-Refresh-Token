@@ -4,17 +4,19 @@
 
 Welcome to my Nodejs-Refresh-Token starter kit for building applications with user authentication and token management features. My starter kit includes a set of pre-built code that you can use as a starting point for building your own application. It includes user authentication functionality, a database for storing user data, and refresh token management features to improve the security of your application.
 
-With my starter kit, you can quickly and easily build secure and scalable Node.js applications with minimal setup and configuration. You can customize the code to fit your specific use case and security requirements, and add new features and functionalities as needed.
+With this starter kit, you can quickly and easily build secure and scalable Node.js applications with minimal setup and configuration. You can customize the code to fit your specific use case and security requirements, and add new features and functionalities as needed.
 
 My starter kit includes the following features and benefits:
 
-    User authentication: My starter kit includes pre-built code for user authentication, including login, registration, and password reset functionality.
+    User authentication: The starter kit includes pre-built code for user authentication, including login, registration, and password reset functionality.
 
-    Database integration: My starter kit includes a database for storing user data, with support for popular databases such as MySQL, PostgreSQL.
+    Database integration: The starter kit includes a database for storing user data, with support for popular databases such as MySQL, PostgreSQL.
 
-    Refresh token management: My starter kit includes refresh token management features, with support for rotating refresh tokens to improve the security of your authentication system.
+    Refresh token management: The starter kit includes refresh token management features, with support for rotating refresh tokens to improve the security of your authentication system.
 
-    Customizable configuration: My starter kit includes a range of customizable configuration options, such as token expiration times, token secret keys, and database settings. This allows you to tailor the code to your specific use case and security requirements.
+    Customizable configuration: The starter kit includes a range of customizable configuration options, such as token expiration times, token secret keys, and database settings. This allows you to tailor the code to your specific use case and security requirements.
+
+    Front-End integration: The starter kit includes a simple authentication form using react.
 
 I hope that my starter kit can help simplify the process of building Node.js applications with authentication and token management features, and provide a solid foundation for your application development. Please feel free to use and customize the code, and share your feedback and contributions to the repository.
 
@@ -22,7 +24,10 @@ I hope that my starter kit can help simplify the process of building Node.js app
 
 Figure 1 represents the authentication architecture of this sample implementation. The architecture is comprised of two logical components; application user, and application services.
 
-<p align="center"><img src="documents/authenticate.png" alt="Architecture Overview"/>Figure 1: High Level Architecture</p>
+<p align="center">
+<img src="documents/authenticate.png" alt="Architecture Overview"/>
+<span>Figure 1: High Level Architecture</span>
+</p>
 
 ## Dependencies
 
@@ -48,7 +53,7 @@ This project uses `eslint` and `prettier`. all configurations for this project i
 
 4- `GRANT ALL PRIVILEGES ON DATABASE authentication TO admin;`
 
-**[2]** Second to install the node_modules for the backend, navigate to the frontend directory and run `npm install` or `yarn install`. After installation is done
+**[2]** Second, to install the node_modules for the backend, navigate to the backend directory and run `npm install` or `yarn install`. After installation is done
 migrate up the database table schema with `npm run migrate:up` or `yarn migrate:up`
 or run the `script.sh` in `sql` folder from root directory with `./script.sh`
 after that start the api in dev mode with `npm run dev` or `yarn dev`.
@@ -85,7 +90,6 @@ It's format TypeScript to JavaScript
 ##### `npm run start` or `yarn start`
 
 Build and runs the app in the clients mode.
-Open <http://localhost:3000/> to view it in the browser.
 
 ##### `npm run migrate:up` or `yarn migrate:up`
 
@@ -97,6 +101,7 @@ Migrate up the database tables
 
 ## Built With
 
+- [React](https://reactjs.org/) - Single Page Application Library
 - [Node](https://nodejs.org) - Javascript runtime
 - [Express](https://expressjs.com/) - Javascript API framework
 - [PostgreSQL](https://www.postgresql.org/) - Open source Relational Database
