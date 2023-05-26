@@ -5,6 +5,7 @@
 .localStorage-data {
     font-size: 12px;
     margin: 10px 0px;
+    max-width: 80%;
     word-break: break-all;
 }
 
