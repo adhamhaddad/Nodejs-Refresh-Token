@@ -22,7 +22,7 @@ I hope that my starter kit can help simplify the process of building Node.js app
 
 # High Level Architecture
 
-Figure 1 represents the authentication architecture of this sample implementation. The architecture is comprised of two logical components; application user, and application services.
+Figure 1 represents the authentication architecture of this sample implementation.
 
 <p align="center">
 <img src="documents/authenticate.png" alt="Architecture Overview"/>
