@@ -28,26 +28,26 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const initAuth = async () => {
-      const accessToken = window.localStorage.getItem('accessToken');
-      if (accessToken) {
-        await get('/auth/auth-me')
-          .then(async (response) => {
-            const { user: userData, accessToken: AccessToken } = response.data;
-            if (accessToken) {
-              window.localStorage.setItem('user', JSON.stringify(userData));
-              window.localStorage.setItem('accessToken', AccessToken);
-            }
-            setUser(userData);
-            setAccessToken(AccessToken);
-          })
-          .catch(() => {
-            localStorage.removeItem('user');
-            localStorage.removeItem('refreshToken');
-            localStorage.removeItem('accessToken');
-            setUser(null);
-            setAccessToken(null);
-            setRefreshToken(null);
-          });
+      try {
+        const accessToken = window.localStorage.getItem('accessToken');
+        if (accessToken) {
+          const response = await get('/auth/auth-me');
+          const { user, accessToken } = response.data;
+
+          if (accessToken) {
+            window.localStorage.setItem('user', JSON.stringify(user));
+            window.localStorage.setItem('accessToken', accessToken);
+          }
+          setUser(user);
+          setAccessToken(accessToken);
+        }
+      } catch (err) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('accessToken');
+        setUser(null);
+        setAccessToken(null);
+        setRefreshToken(null);
       }
     };
     initAuth();
